@@ -20,3 +20,17 @@ Official PyTorch implementation of DeepLIR. Code was modified from [this repo](h
 
 ### Pretrained Weights
 You can download the model weights [here](https://drive.google.com/file/d/1IMMPp7pR7XcUdbayVngp3HeI3LdT0rsf/view?usp=sharing) and place it in the root directory.
+
+### Citation
+
+If you use our work in your research or wish to refer to the benchmarks provided, please cite our paper as follows:
+
+```bibtex
+@InProceedings{Poudel_2024_WACV,
+    author    = {Poudel, Arpan and Nakarmi, Ukash},
+    title     = {DeepLIR: Attention-Based Approach for Mask-Based Lensless Image Reconstruction},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV) Workshops},
+    month     = {January},
+    year      = {2024},
+    pages     = {431-439}
+}
