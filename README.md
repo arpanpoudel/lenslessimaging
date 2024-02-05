@@ -13,6 +13,6 @@ Official PyTorch implementation of DeepLIR. Code was modified from [this repo](h
 
 ### Datasets for Lensless Learning
 
-- **[Lensless Learning Dataset](https://waller-lab.github.io/LenslessLearning/dataset.html):**The full Lensless Learning Dataset can be found here.
+- **[Lensless Learning Dataset](https://waller-lab.github.io/LenslessLearning/dataset.html):** Full Training dataset
 
 - **[In the Wild Images](https://drive.google.com/drive/folders/1dtyxApqryiXbpqLSSUKreCVKfjQcT7pS?usp=sharing):** In addition, the 'in the wild' images taken without a computer monitor can be found here.
