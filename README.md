@@ -1,5 +1,5 @@
 ## DeepLIR: Attention-based approach for Mask-Based Lensless Image Reconstruction
-
+![Example Image](assets/Intro.png)
 
 ### Project Structure
 - `helper`: This directory consists of helper functions.
