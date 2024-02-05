@@ -1,4 +1,5 @@
 ## DeepLIR: Attention-based approach for Mask-Based Lensless Image Reconstruction
+[Paper](https://openaccess.thecvf.com/content/WACV2024W/VAQ/papers/Poudel_DeepLIR_Attention-Based_Approach_for_Mask-Based_Lensless_Image_Reconstruction_WACVW_2024_paper.pdf)
 ![Example Image](assets/Intro.png)
 Official PyTorch implementation of score-MRI. Code was modified from [this repo](https://github.com/Waller-Lab/LenslessLearning)
 ### Project Structure
