@@ -16,3 +16,7 @@ Official PyTorch implementation of DeepLIR. Code was modified from [this repo](h
 - **[Lensless Learning Dataset](https://waller-lab.github.io/LenslessLearning/dataset.html):** Full Training dataset
 
 - **[In the Wild Images](https://drive.google.com/drive/folders/1dtyxApqryiXbpqLSSUKreCVKfjQcT7pS?usp=sharing):** In addition, the 'in the wild' images taken without a computer monitor can be found here.
+
+
+### Pretrained Weights
+You can download the model weights [here](https://drive.google.com/file/d/1IMMPp7pR7XcUdbayVngp3HeI3LdT0rsf/view?usp=sharing) and place it in the root directory.
