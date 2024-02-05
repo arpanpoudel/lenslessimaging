@@ -1,0 +1,9 @@
+einops
+matplotlib
+scikit-image
+opencv-python
+torch
+torchvision
+torchmetrics
+tensorboard
+tqdm
