@@ -1,6 +1,6 @@
 ## DeepLIR: Attention-based approach for Mask-Based Lensless Image Reconstruction
 ![Example Image](assets/Intro.png)
-
+Official PyTorch implementation of score-MRI. Code was modified from [this repo](https://github.com/Waller-Lab/LenslessLearning)
 ### Project Structure
 - `helper`: This directory consists of helper functions.
 - `models`: This directory contains files required for defining the ADMM model and U-Net, a U-Net architecture with several modifications including transformer attention, and anti-aliasing down/up-sampling.
