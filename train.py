@@ -9,15 +9,14 @@ import argparse
 from timeit import default_timer as timer
 from models.admm_model import *
 from models.network_swinir import SwinIR as net
-from models.ensemble import MyEnsemble
+from models.ensemble import EnsembleModel
 from torch.distributed import init_process_group, destroy_process_group
 from torch.nn.parallel import DistributedDataParallel as DDP
 import warnings
-from models.unet import UNet270480 as unet
 from models.u_net2 import Unet as unet2
 from utils import create_writer
-#warnings.filterwarnings('ignore')
-torch.autograd.set_detect_anomaly(True)
+warnings.filterwarnings('ignore')
+#torch.autograd.set_detect_anomaly(True)
 import os
 #os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:128"
 
@@ -41,13 +40,13 @@ def main(args):
 
     # Setup directories
     path = str(os.getcwd()) 
-    train_csv= path + '/dataset/dataset/dataset_train.csv'
-    test_csv=path + '/dataset/dataset/dataset_test.csv'
-    data_dir=path + '/dataset/dataset/diffuser_images/'
-    label_dir= path +'/dataset/dataset/ground_truth_lensed/'
+    train_csv= path + '\\dataset\\dataset_train.csv'
+    test_csv=path + '\\dataset\\dataset_test.csv'
+    data_dir=path + '\\dataset\\diffuser_images\\'
+    label_dir= path +'\\dataset\\ground_truth_lensed\\'
 
     # Setup target device
-    device = "cuda:6" if torch.cuda.is_available() else "cpu"
+    device = "cuda:0" if torch.cuda.is_available() else "cpu"
     
     #pad the image so that the image is compatible to swinIR
     train_transform=None
@@ -72,7 +71,7 @@ def main(args):
     
     model_unet=unet2(dim=36,channels=3,dim_mults=(1,2,4,8)) 
     #define ensembled model
-    model=MyEnsemble(model_admm,model_unet)
+    model=EnsembleModel(model_admm,model_unet)
     optimizer = torch.optim.AdamW(model.parameters(),
                                  lr=LEARNING_RATE)
     

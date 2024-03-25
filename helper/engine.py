@@ -14,13 +14,11 @@ import os
 import copy
 from utils import create_writer
 from utils import EMA
+import warnings
+warnings.filterwarnings('ignore')
 #setup EMA
 ema = EMA(0.995)
-# Initializing the LPIPS model
-loss_fn_vgg = LPIPS(net='alex')
 
-def lpips_loss(output, target):
-    return loss_fn_vgg.forward(output, target).mean()
 
 
 
@@ -32,8 +30,6 @@ def train_step(model: torch.nn.Module,
     """
     # Put model in train mode
     model.train()
-    #lpips loss
-    loss_fn_vgg.to(device)
     #mse loss 
     mse_loss = torch.nn.MSELoss()
 
@@ -94,15 +90,14 @@ def train_step(model: torch.nn.Module,
     return total_loss_org
 
 def test_step(model: torch.nn.Module, 
-              dataloader: torch.utils.data.DataLoader, 
+              dataloader: torch.utils.data.DataLoader,lpipsloss, 
               device: torch.device) -> Tuple[float, float]:
     """Tests a PyTorch model for a single epoch.
     """
     # Put model in eval mode
     model.eval() 
     
-    #lpips loss
-    lpipsloss = loss_fn_vgg.to('cpu')
+
     #mse loss 
     mse_loss = torch.nn.MSELoss()
     #setup loss dict
@@ -176,6 +171,9 @@ def train(model: torch.nn.Module,
     # Make sure model on target device
     model.to(device)
     #lpips to device
+    loss_fn_vgg = LPIPS(net='alex')
+    #lpips loss
+    lpipsloss = loss_fn_vgg.to('cpu')
     
     
     ema_model = copy.deepcopy(model).eval().requires_grad_(False)
@@ -202,7 +200,7 @@ def train(model: torch.nn.Module,
         
         if val==True:
             eval_mse,eval_psnr,eval_lpips= test_step(model=model,
-                dataloader=test_dataloader,
+                dataloader=test_dataloader,lpipsloss=lpipsloss,
                 device=device)
 
         # Update results dictionary
