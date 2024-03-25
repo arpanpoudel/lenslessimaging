@@ -1,2 +1,4 @@
 dataset/
 checkpoint.pth
+runs/
+.ipynb_checkpoints/
