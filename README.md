@@ -19,7 +19,7 @@ Official PyTorch implementation of DeepLIR. Code was modified from [this repo](h
 
 
 ### Pretrained Weights
-You can download the model weights [here](https://drive.google.com/file/d/1IMMPp7pR7XcUdbayVngp3HeI3LdT0rsf/view?usp=sharing) and place it in the root directory.
+You can download the model weights [here](https://drive.google.com/file/d/1B-R-0UZXqDv96fu_6fDc87UfBoxkd3yH/view?usp=sharing) and place it in the root directory.
 
 ### Citation
 
